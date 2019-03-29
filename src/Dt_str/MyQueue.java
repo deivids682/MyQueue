@@ -38,8 +38,45 @@ public class MyQueue<T> {
             return false;
         }else {
             //TODO add element
-            return  true;
+            if(isEmpty())
+                front = 0;
+                rear++;
+                queue[rear] = element;
+                elementCounter++;
+                return true;
+
         }
+    }
+
+    public T dequeue() throws Exception{
+        if (isEmpty()){
+            throw  (new Exception("It is not possible to remove element because queue is empty"));
+        }else {
+            T temp = queue[front];
+            if(elementCounter == 1){
+                rear = -1;
+                front = -1;
+            }
+            front++;
+            elementCounter--;
+            return temp;
+        }
+    }
+
+    public String toString(){
+
+        String res = "";
+        for (int i = front; i <= rear ; i++)
+            res = res + queue[i] + " ";
+
+            return res;
+
+    }
+
+    public  void clear(){
+        front = -1;
+        rear = -1;
+        elementCounter = 0;
     }
 
 }
