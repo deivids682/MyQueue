@@ -1,5 +1,6 @@
 package Dt_str.main;
 
+import Dt_str.MyLinkedStack;
 import Dt_str.MyQueue;
 
 import java.util.Random;
@@ -24,6 +25,20 @@ public class Main {
         System.out.println(qForInt);
 
         call1911();
+
+
+        MyLinkedStack Linked = new MyLinkedStack();
+        Linked.push('a');
+        Linked.push('b');
+        Linked.display();
+        Linked.push('c');
+
+        try {
+            System.out.println(Linked.top());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        Linked.display();
 
 
     }

@@ -8,8 +8,7 @@ public class MyNode<T> {
         return data;
     }
 
-    public MyNode(T data) {
-        this.data = data;
+    public MyNode() {
 
     }
     public void setData(T data) {

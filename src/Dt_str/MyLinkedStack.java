@@ -27,14 +27,48 @@ public class MyLinkedStack <T>{
     }
 
     public boolean push(T element){
+        if(isFull()) return false;
+        else {
 
+            MyNode newNode = new MyNode();
+            newNode.setData(element);
+            newNode.setNext(linkToTopElement);
+            linkToTopElement = newNode;
+            elementCounter++;
+            return true;
+        }
     }
 
-    public T top(){
+    public T top() throws Exception{
+        if(isEmpty())
+            throw (new Exception("Stack is empty and there are not any element"));
+        else {
+            elementCounter--;
+            return linkToTopElement.getData();
+        }
 
     }
 
     public boolean pop(){
 
+        if (isEmpty()) return false;
+        else{
+            linkToTopElement = linkToTopElement.getNext();
+            return true;
+        }
+    }
+
+    public void display(){
+        MyNode temp = linkToTopElement;
+
+        while (temp != null){
+            System.out.println(temp.getData());
+            temp = temp.getNext();
+        }
+
+    }
+
+    public void clear(){
+        linkToTopElement = null;
     }
 }
