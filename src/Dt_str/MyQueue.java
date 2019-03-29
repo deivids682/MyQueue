@@ -33,6 +33,13 @@ public class MyQueue<T> {
         return elementCounter;
     }
 
-    public void
+    public boolean enqueue(T element){
+        if(isFull()){
+            return false;
+        }else {
+            //TODO add element
+            return  true;
+        }
+    }
 
 }
